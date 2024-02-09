@@ -1,2 +1,11 @@
-<app-comp-item *ngFor="let compound of compounds" [compound]="compound">
-</app-comp-item>
+<div class="container">
+  <div class="row justify-content-around mt-5">
+    <app-comp-item
+      class="customCard card mb-4 col-md-5 me-2 p-3"
+      *ngFor="let compound of compounds"
+      [compound]="compound"
+      routerLink="/details/{{ compound.id }}"
+    >
+    </app-comp-item>
+  </div>
+</div>

@@ -1,4 +1,27 @@
-<a routerLink="/details/{{ compound.id }}">
-  <h3>{{ compound.id }}. {{ compound.CompoundName }}</h3>
-  <p>{{ compound.CompoundDescription }}</p>
-</a>
+<div class="row g-0">
+  <div class="col-md-4">
+    <img
+      src="{{ compound.strImageSource }}"
+      class="img-fluid rounded-start"
+      alt="..."
+    />
+  </div>
+
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title">{{ compound.CompoundName }}</h5>
+
+      <p class="card-text">
+        {{ compound.CompoundDescription }}
+      </p>
+
+      <p class="card-text">
+        <small class="text-muted">
+          {{ compound.strImageAttribution }}
+          <br />
+          id: {{ compound.id }}
+        </small>
+      </p>
+    </div>
+  </div>
+</div>
