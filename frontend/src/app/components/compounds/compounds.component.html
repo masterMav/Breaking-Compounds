@@ -1,11 +1,15 @@
 <div class="container">
-  <div>
-    <select (change)="onTableSizeChange($event)">
-      <option *ngFor="let size of tableSizes">{{ size }}</option>
-    </select>
-  </div>
+  <small class="d-flex justify-content-center pb-2 mt-3 text-muted">
+    <span class="me-2"> Items Per Page: </span>
 
-  <div class="row justify-content-around mt-5">
+    <select (change)="onTableSizeChange($event)">
+      <option *ngFor="let size of tableSizes">
+        {{ size }}
+      </option>
+    </select>
+  </small>
+
+  <div class="row justify-content-around mt-3">
     <app-comp-item
       class="customCard card mb-4 col-md-5 me-2 p-3 d-flex justify-content-between"
       *ngFor="

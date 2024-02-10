@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddCompComponent } from './components/add-comp/add-comp.component';
 import { EditCompComponent } from './components/edit-comp/edit-comp.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DatePipe } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: '', component: CompoundsComponent },
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
