@@ -16,6 +16,7 @@ import { AddCompComponent } from './components/add-comp/add-comp.component';
 import { EditCompComponent } from './components/edit-comp/edit-comp.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DatePipe } from '@angular/common';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: CompoundsComponent },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'add', component: AddCompComponent },
   { path: 'edit', component: EditCompComponent },
+  { path: '**', pathMatch: 'full', component: NotFoundComponent },
 ];
 
 @NgModule({
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
     DetailsComponent,
     AddCompComponent,
     EditCompComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
