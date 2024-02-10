@@ -24,4 +24,12 @@ export class CompService {
   getCompoundById(id: Number): Observable<Compound> {
     return this.http.get<Compound>(`${this.apiUrl}/${id}`);
   }
+
+  addCompound(compound: Compound): Observable<Compound> {
+    return this.http.post<Compound>(
+      `${this.apiUrl}/create`,
+      compound,
+      httpOptions
+    );
+  }
 }

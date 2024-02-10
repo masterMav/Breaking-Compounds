@@ -4,5 +4,5 @@ export interface Compound {
   CompoundDescription: string;
   strImageSource: string;
   strImageAttribution: string;
-  dateModified: Date;
+  dateModified: string;
 }
