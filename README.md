@@ -25,6 +25,15 @@ A full-stack web app that aims to assist users searching for chemical compounds 
 - &#10004; MySQL Database
 - &#10004; Import given CSV.
 
+## Installation Guide
+
+1. Clone this repo.
+2. Navigate to the `backend` directory and run `npm install`.
+3. In the `backend` directory create a `.env` file and add these four values `DB_USERNAME`, `DB_PASSWORD`, `DB_DATABASE` and `DB_HOST`.
+4. Navigate to the `frontend` directory and run `npm install`.
+5. Create a MySQL Database and update the connection details.
+6. Start the Express Server & Angular App.
+
 ## Video Demonstration
 
 [![youtube_vid](https://img.youtube.com/vi/TcGXrE-xgXw/0.jpg)](https://www.youtube.com/watch?v=TcGXrE-xgXw)
