@@ -39,9 +39,6 @@ module.exports = (sequelize, DataTypes) => {
       strImageAttribution: {
         type: DataTypes.TEXT,
         allowNull: true,
-        validate: {
-          notEmpty: false,
-        },
       },
 
       dateModified: {

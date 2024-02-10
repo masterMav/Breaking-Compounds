@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-around mt-5">
     <app-comp-item
-      class="customCard card mb-4 col-md-5 me-2 p-3"
+      class="customCard card mb-4 col-md-5 me-2 p-3 d-flex justify-content-between"
       *ngFor="let compound of compounds"
       [compound]="compound"
       (onDeleteCompound)="deleteCompound(compound)"

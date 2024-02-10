@@ -13,12 +13,14 @@ import { AboutComponent } from './components/about/about.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddCompComponent } from './components/add-comp/add-comp.component';
+import { EditCompComponent } from './components/edit-comp/edit-comp.component';
 
 const appRoutes: Routes = [
   { path: '', component: CompoundsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: 'add', component: AddCompComponent },
+  { path: 'edit', component: EditCompComponent },
 ];
 
 @NgModule({
@@ -30,6 +32,7 @@ const appRoutes: Routes = [
     AboutComponent,
     DetailsComponent,
     AddCompComponent,
+    EditCompComponent,
   ],
   imports: [
     BrowserModule,

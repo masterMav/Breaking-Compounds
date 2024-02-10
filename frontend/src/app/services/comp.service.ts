@@ -33,8 +33,15 @@ export class CompService {
     );
   }
 
-  deleteCompound(id: Number): Observable<Compound> {
-    return this.http.delete<Compound>(`${this.apiUrl}/${id}`, {
+  deleteCompound(id: Number): Observable<string> {
+    return this.http.delete<string>(`${this.apiUrl}/${id}`, {
+      responseType: 'text' as 'json',
+    });
+  }
+
+  updateCompound(compound: Compound): Observable<string> {
+    return this.http.put<string>(`${this.apiUrl}/${compound.id}`, compound, {
+      ...httpOptions,
       responseType: 'text' as 'json',
     });
   }

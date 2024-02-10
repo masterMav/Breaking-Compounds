@@ -9,15 +9,7 @@
 
   <div class="col-md-8">
     <div class="card-body">
-      <div class="d-flex justify-content-between">
-        <h5 class="card-title">{{ compound.CompoundName }}</h5>
-
-        <fa-icon
-          [ngStyle]="{ color: 'red' }"
-          [icon]="faTimes"
-          (click)="onDelete($event, compound)"
-        ></fa-icon>
-      </div>
+      <h5 class="card-title">{{ compound.CompoundName }}</h5>
 
       <p class="card-text">
         {{ compound.CompoundDescription }}
@@ -26,10 +18,21 @@
       <p class="card-text">
         <small class="text-muted">
           {{ compound.strImageAttribution }}
-          <br />
-          id: {{ compound.id }}
         </small>
       </p>
     </div>
   </div>
+</div>
+<div class="row g-0 d-flex justify-content-end">
+  <button type="button" class="btn btn-sm btn-secondary col-2 me-3" (click)="onEdit($event, compound)">
+    Edit
+  </button>
+  
+  <button
+    type="button"
+    class="btn btn-sm btn-outline-danger col-2"
+    (click)="onDelete($event, compound)"
+  >
+    Delete
+  </button>
 </div>
