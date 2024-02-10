@@ -1,12 +1,36 @@
 <div class="container">
+  <div>
+    <select (change)="onTableSizeChange($event)">
+      <option *ngFor="let size of tableSizes">{{ size }}</option>
+    </select>
+  </div>
+
   <div class="row justify-content-around mt-5">
     <app-comp-item
       class="customCard card mb-4 col-md-5 me-2 p-3 d-flex justify-content-between"
-      *ngFor="let compound of compounds"
+      *ngFor="
+        let compound of compounds
+          | paginate
+            : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              };
+        let i = index
+      "
       [compound]="compound"
       (onDeleteCompound)="deleteCompound(compound)"
       routerLink="/details/{{ compound.id }}"
     >
     </app-comp-item>
+  </div>
+
+  <div>
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
   </div>
 </div>
