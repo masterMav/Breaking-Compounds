@@ -9,7 +9,15 @@
 
   <div class="col-md-8">
     <div class="card-body">
-      <h5 class="card-title">{{ compound.CompoundName }}</h5>
+      <div class="d-flex justify-content-between">
+        <h5 class="card-title">{{ compound.CompoundName }}</h5>
+
+        <fa-icon
+          [ngStyle]="{ color: 'red' }"
+          [icon]="faTimes"
+          (click)="onDelete($event, compound)"
+        ></fa-icon>
+      </div>
 
       <p class="card-text">
         {{ compound.CompoundDescription }}

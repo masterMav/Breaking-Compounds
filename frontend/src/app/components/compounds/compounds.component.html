@@ -4,6 +4,7 @@
       class="customCard card mb-4 col-md-5 me-2 p-3"
       *ngFor="let compound of compounds"
       [compound]="compound"
+      (onDeleteCompound)="deleteCompound(compound)"
       routerLink="/details/{{ compound.id }}"
     >
     </app-comp-item>

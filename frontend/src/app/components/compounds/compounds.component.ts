@@ -17,4 +17,10 @@ export class CompoundsComponent {
       .getCompounds()
       .subscribe((compounds) => (this.compounds = compounds));
   }
+
+  deleteCompound(compound: Compound) {
+    this.compService.deleteCompound(Number(compound.id)).subscribe(() => {
+      this.compounds = this.compounds.filter((c) => c.id !== compound.id);
+    });
+  }
 }

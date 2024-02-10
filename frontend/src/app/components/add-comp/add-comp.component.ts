@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Compound } from '../../Compound';
 import { CompService } from '../../services/comp.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-comp',
@@ -15,6 +16,8 @@ export class AddCompComponent {
   strImageAttribution: string;
   dateModified: string;
 
+  constructor(private compService: CompService, private router: Router) {}
+
   formatDate(date: Date): string {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -26,12 +29,11 @@ export class AddCompComponent {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   }
 
-  constructor(private compService: CompService) {}
-
   addCompound(compound: Compound) {
-    this.compService
-      .addCompound(compound)
-      .subscribe((compound) => alert('New compound created successfully.'));
+    this.compService.addCompound(compound).subscribe((compound) => {
+      alert('New compound created successfully.');
+      this.router.navigate(['/']);
+    });
   }
 
   onSubmit() {

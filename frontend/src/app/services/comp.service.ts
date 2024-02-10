@@ -32,4 +32,10 @@ export class CompService {
       httpOptions
     );
   }
+
+  deleteCompound(id: Number): Observable<Compound> {
+    return this.http.delete<Compound>(`${this.apiUrl}/${id}`, {
+      responseType: 'text' as 'json',
+    });
+  }
 }
